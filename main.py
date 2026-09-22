@@ -1,5 +1,5 @@
 from model import ask_ai
-import random
+# import random
 
 print("Welcome to Trivia Game")
 print("Enter n to display result")
@@ -7,9 +7,9 @@ print("Enter n to display result")
 scores = 0
 decide = "y"
 while decide == 'y':
-    question = ask_ai("Generate a simple addition question in mathematics, in one line")
-    options = (ask_ai(f"{question}. Generate options to this question the option should be in this format [2,3,4]"))
-    answer = int(ask_ai(f"{question}. Return the answer in integer"))
+    question = ask_ai("Generate a simple addition question in mathematics, in one line", "user")
+    options = ask_ai(f"{question}. Generate options to this question the option should be in this format [2,3,4,10]", "assistant")
+    answer = int(ask_ai(f"{question}. Return the answer in integer", "assistant"))
 
     # options = [random.randint(1,5) for _ in range(4)]
     

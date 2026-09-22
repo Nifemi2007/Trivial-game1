@@ -7,7 +7,7 @@ MODEL_NAME = "openai/gpt-oss-20b"
 dotenv.load_dotenv()
 API_KEY = os.getenv("GROQ_API_KEY")
 
-def ask_ai(prompt, model = MODEL_NAME):
+def ask_ai(prompt,role, model = MODEL_NAME):
     headers = {
         "Authorization": f"Bearer {API_KEY}", 
         "Content-Type": "application/json"
@@ -16,7 +16,7 @@ def ask_ai(prompt, model = MODEL_NAME):
     payload = {
         "model": model,
         "messages": [
-            {"role": "user", "content": prompt}
+            {"role": role, "content": prompt}
         ]
     }
 
